@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.progmatik</groupId>
+    <artifactId>wsdlforms</artifactId>
+    <version>11.11.0.15</version>
+    <packaging>jar</packaging>
+
+    <name>wsdlforms</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jaxws-maven-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>wsdla</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--<verbose>true</verbose>-->
+                    <xdebug>true</xdebug>
+                    <xadditionalHeaders>true</xadditionalHeaders>
+                    <extension>true</extension>
+                    <bindingFiles>
+                        <bindingFile>custom_handler.xml</bindingFile>
+                    </bindingFiles>
+                    <wsdlFiles>
+                        <wsdlFile>appeals/hcs-appeals-service-async.wsdl</wsdlFile>
+                        <wsdlFile>bills/hcs-bills-service.wsdl</wsdlFile>
+                        <wsdlFile>bills/hcs-bills-service-async.wsdl</wsdlFile>
+                        <wsdlFile>capital-repair/hcs-capital-repair-service.wsdl</wsdlFile>
+                        <wsdlFile>capital-repair/hcs-capital-repair-service-async.wsdl</wsdlFile>
+                        <wsdlFile>device-metering/hcs-device-metering-service.wsdl</wsdlFile>
+                        <wsdlFile>device-metering/hcs-device-metering-service-async.wsdl</wsdlFile>
+                        <wsdlFile>fas/hcs-fas-service-async.wsdl</wsdlFile>
+                        <wsdlFile>house-management/hcs-house-management-service.wsdl</wsdlFile>
+                        <wsdlFile>house-management/hcs-house-management-service-async.wsdl</wsdlFile>
+                        <wsdlFile>infrastructure/hcs-infrastructure-service.wsdl</wsdlFile>
+                        <wsdlFile>infrastructure/hcs-infrastructure-service-async.wsdl</wsdlFile>
+                        <wsdlFile>inspection/hcs-inspection-service.wsdl</wsdlFile>
+                        <wsdlFile>inspection/hcs-inspection-service-async.wsdl</wsdlFile>
+                        <wsdlFile>licenses/hcs-licenses-service.wsdl</wsdlFile>
+                        <wsdlFile>licenses/hcs-licenses-service-async.wsdl</wsdlFile>
+                        <wsdlFile>msp/hcs-msp-service.wsdl</wsdlFile>
+                        <wsdlFile>msp/hcs-msp-service-async.wsdl</wsdlFile>
+                        <wsdlFile>nsi/hcs-nsi-service.wsdl</wsdlFile>
+                        <wsdlFile>nsi/hcs-nsi-service-async.wsdl</wsdlFile>
+                        <wsdlFile>nsi-common/hcs-nsi-common-service.wsdl</wsdlFile>
+                        <wsdlFile>nsi-common/hcs-nsi-common-service-async.wsdl</wsdlFile>
+                        <wsdlFile>organizations-registry/hcs-organizations-registry-service.wsdl</wsdlFile>
+                        <wsdlFile>organizations-registry/hcs-organizations-registry-service-async.wsdl</wsdlFile>
+                        <wsdlFile>organizations-registry-common/hcs-organizations-registry-common-service.wsdl</wsdlFile>
+                        <wsdlFile>organizations-registry-common/hcs-organizations-registry-common-service-async.wsdl</wsdlFile>
+                        <wsdlFile>payment/hcs-payment-service-async.wsdl</wsdlFile>
+                        <wsdlFile>rap/hcs-rap-service.wsdl</wsdlFile>
+                        <wsdlFile>rap/hcs-rap-service-async.wsdl</wsdlFile>
+                        <wsdlFile>services/hcs-services-service.wsdl</wsdlFile>
+                        <wsdlFile>services/hcs-services-service-async.wsdl</wsdlFile>
+                        <wsdlFile>tariff/hcs-tariff-service-async.wsdl</wsdlFile>
+                        <wsdlFile>uk/hcs-uk-service.wsdl</wsdlFile>
+                        <wsdlFile>uk/hcs-uk-service-async.wsdl</wsdlFile>
+                        <wsdlFile>volume-quality/hcs-volume-quality-service.wsdl</wsdlFile>
+                        <wsdlFile>volume-quality/hcs-volume-quality-service-async.wsdl</wsdlFile>
+                    </wsdlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
